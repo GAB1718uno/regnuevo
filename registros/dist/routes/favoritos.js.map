@@ -1,0 +1,1 @@
+{"version":3,"file":"favoritos.js","sourceRoot":"","sources":["../../routes/favoritos.ts"],"names":[],"mappings":";;AAAA,qCAAiC;AACjC,wDAKkC;AAClC,0DAAuD;AAEvD,MAAM,MAAM,GAAG,IAAA,gBAAM,GAAE,CAAC;AAExB,MAAM,CAAC,GAAG,CAAC,GAAG,EAAE,uBAAU,EAAE,4BAAgB,CAAC,CAAC;AAC9C,0DAA0D;AAC1D,MAAM,CAAC,GAAG,CAAC,eAAe,EAAE,uBAAU,EAAE,0BAAc,CAAC,CAAC;AACxD,yCAAyC;AAEzC,kBAAe,MAAM,CAAC"}
