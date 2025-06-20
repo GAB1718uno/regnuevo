@@ -51,6 +51,8 @@ class Server {
     const allowedOrigins = [
       "http://localhost:3000",
       "http://localhost:4000",
+      "https://cementrio.com.es",
+      "https://167.71.36.17",
       "https://cementereact.vercel.app",
       "https://cementereact-hn8is223k-gilsons-projects-5a42cee5.vercel.app"
     ];
