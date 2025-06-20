@@ -13,8 +13,6 @@ import comentariosRoutes from "../routes/comentarios";
 import db from "../db/connection";
 import fileUpload from "express-fileupload";
 import bodyParser from "body-parser";
-import https from "https";
-import fs from "fs";
 
 class Server {
   private app: Application;
@@ -52,9 +50,7 @@ class Server {
   private middlewares(): void {
     const allowedOrigins = [
       "http://localhost:3000",
-      "https://localhost:3000",
       "http://localhost:4000",
-      "https://localhost:4000",
       "https://cementereact.vercel.app",
       "https://cementereact-hn8is223k-gilsons-projects-5a42cee5.vercel.app"
     ];
@@ -97,19 +93,10 @@ class Server {
   }
 
   public listen() {
-    
-    const sslOptions = {
-      key: fs.readFileSync(process.env.SSL_KEY_PATH || '/etc/letsencrypt/live/cementerio.com.es/privkey.pem'),
-      cert: fs.readFileSync(process.env.SSL_CERT_PATH || '/etc/letsencrypt/live/cementerio.com.es/fullchain.pem'),
-  };
-
-  https.createServer(sslOptions, this.app).listen(this.port, () => {
-      console.log(`🚀 Servidor HTTPS en puerto ${this.port}`);
+    this.app.listen(this.port, () => {
+      console.log(`🚀 Servidor corriendo en puerto ${this.port}`);
     });
-
-    // Redirige HTTP a HTTPS (opcional pero recomendado)
-    express().use((req, res) => res.redirect(`https://${req.headers.host}${req.url}`)).listen(80);
-}
+  }
 }
 
 export default Server;
